@@ -19,9 +19,36 @@ To start your Phoenix server:
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+## Requests
+
+Run `mix phx.routes` to get a list of all available routes.
+
+Send a request, e.g.:
+
+GET: [http://localhost:4000/api/health](http://localhost:4000/api/health)
+
+`curl http://localhost:4000/api/health`
+`curl http://localhost:4000/api/channels`
+
+POST / PATCH / PUT requests must send data in a payload with a data property:
+
+```json
+// POST: http://localhost:4000/api/channels
+// Content-Type: application/json
+{
+  "data": {
+    "name": "created",
+    "channelNumber": 2,
+    "mode": "RTP",
+    "streamAddress": "312.123.322.122",
+    "streamPort": 5000
+  }
+}
+```
 
 ## Learn more
+
+Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
 
 - Official website: https://www.phoenixframework.org/
 - Guides: https://hexdocs.pm/phoenix/overview.html
