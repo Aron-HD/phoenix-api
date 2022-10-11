@@ -1,6 +1,7 @@
 import Config
 
 # Configure your database
+# config :phoenix_api_v2, Api.Repo,
 # username: ""
 # password: ""
 # database: ""

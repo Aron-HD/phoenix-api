@@ -16,6 +16,10 @@ config :phoenix_api_v2, ApiWeb.Endpoint,
 # Do not print debug messages in production
 config :logger, level: :info
 
+# Configure DB? gigalixir free tier pool size must be
+# Not sure how to setup the rest
+config :phoenix_api_v2, Api.Repo, pool_size: 2
+
 # ## SSL Support
 #
 # To get SSL working, you will need to add the `https` key
