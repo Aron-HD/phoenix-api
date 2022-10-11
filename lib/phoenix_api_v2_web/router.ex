@@ -10,6 +10,7 @@ defmodule ApiWeb.Router do
     pipe_through :api
     get "/health", HealthController, :index
     resources "/channels", ChannelController, except: [:new, :edit]
+    resources "/channel_groups", ChannelGroupController, except: [:new, :edit]
   end
 
   # Enables LiveDashboard only for development

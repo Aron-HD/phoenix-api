@@ -21,4 +21,18 @@ defmodule Api.ChannelsFixtures do
 
     channel
   end
+
+  @doc """
+  Generate a channel_group.
+  """
+  def channel_group_fixture(attrs \\ %{}) do
+    {:ok, channel_group} =
+      attrs
+      |> Enum.into(%{
+        name: "some name"
+      })
+      |> Api.Channels.create_channel_group()
+
+    channel_group
+  end
 end
