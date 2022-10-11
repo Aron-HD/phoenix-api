@@ -9,6 +9,7 @@ defmodule Api.Channels.Channel do
     field :name, :string
     field :stream_address, :string
     field :stream_port, :integer
+
     belongs_to :channel_group, Api.Channels.ChannelGroup
 
     timestamps()
