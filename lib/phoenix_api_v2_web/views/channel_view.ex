@@ -17,7 +17,8 @@ defmodule ApiWeb.ChannelView do
       channel_number: channel.channel_number,
       stream_address: channel.stream_address,
       stream_port: channel.stream_port,
-      mode: channel.mode
+      mode: channel.mode,
+      channel_group: channel.channel_group
     }
   end
 end
