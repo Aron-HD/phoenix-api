@@ -57,9 +57,16 @@ defmodule Api.Channels do
 
   """
   def create_channel(attrs \\ %{}) do
-    %Channel{}
-    |> Channel.changeset(attrs)
-    |> Repo.insert()
+    with {:ok, %Channel{} = channel} <-
+           %Channel{}
+           |> Channel.changeset(attrs)
+           |> Repo.insert() do
+      res =
+        channel
+        |> Repo.preload(:channel_group)
+
+      {:ok, res}
+    end
   end
 
   @doc """
@@ -75,9 +82,16 @@ defmodule Api.Channels do
 
   """
   def update_channel(%Channel{} = channel, attrs) do
-    channel
-    |> Channel.changeset(attrs)
-    |> Repo.update()
+    with {:ok, %Channel{} = channel} <-
+           channel
+           |> Channel.changeset(attrs)
+           |> Repo.update() do
+      res =
+        channel
+        |> Repo.preload(:channel_group)
+
+      {:ok, res}
+    end
   end
 
   @doc """
@@ -163,6 +177,16 @@ defmodule Api.Channels do
     %ChannelGroup{}
     |> ChannelGroup.changeset(attrs)
     |> Repo.insert()
+
+    # FIXME preload channelgroup insert
+    # with {:ok, %ChannelGroup{} = channel_group} <-
+    #        %ChannelGroup{}
+    #        |> ChannelGroup.changeset(attrs)
+    #        |> Repo.insert() do
+    #   res = Repo.preload(channel_group, :channels)
+
+    #   {:ok, res}
+    # end
   end
 
   @doc """
@@ -181,6 +205,16 @@ defmodule Api.Channels do
     channel_group
     |> ChannelGroup.changeset(attrs)
     |> Repo.update()
+
+    # FIXME preload channelgroup update
+    # with {:ok, %ChannelGroup{} = channel_group} <-
+    #        channel_group
+    #        |> ChannelGroup.changeset(attrs)
+    #        |> Repo.update() do
+    #   res = Repo.preload(channel_group, :channels)
+
+    #   {:ok, res}
+    # end
   end
 
   @doc """
