@@ -46,6 +46,14 @@ POST / PATCH / PUT requests must send data in a payload with a data property:
 }
 ```
 
+## Deploy
+
+- `gigalixir login`
+
+[Docs: Getting started](https://gigalixir.readthedocs.io/en/latest/getting-started-guide.html#install-the-command-line-interface)
+[Docs: Modifying an existing app](https://gigalixir.readthedocs.io/en/latest/modify-app/index.html#modifying-existing-app)
+[Docs: Elixir Releases](https://gigalixir.readthedocs.io/en/latest/modify-app/releases.html#modifying-existing-app-with-elixir-releases)
+
 ## Learn more
 
 Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
