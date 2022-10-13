@@ -3,7 +3,11 @@ defmodule ApiWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
-    plug Casex.CamelCaseDecoderPlug
+    plug Accent.Plug.Request, case: Accent.Case.Snake
+
+    plug Accent.Plug.Response,
+      default_case: Accent.Case.Camel,
+      json_codec: Jason
   end
 
   scope "/api", ApiWeb do

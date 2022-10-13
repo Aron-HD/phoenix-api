@@ -44,7 +44,7 @@ defmodule Api.MixProject do
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
       {:cors_plug, "~> 3.0"},
-      {:casex, "~> 0.4.2"}
+      {:accent, "~> 1.1"}
     ]
   end
 
