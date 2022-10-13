@@ -11,6 +11,8 @@ defmodule ApiWeb.Router do
     get "/health", HealthController, :index
     resources "/channels", ChannelController, except: [:new, :edit]
     resources "/channel_groups", ChannelGroupController, except: [:new, :edit]
+    resources "/stbs", StbController, except: [:new, :edit]
+    resources "/stb_groups", StbGroupController, except: [:new, :edit]
   end
 
   # Enables LiveDashboard only for development
