@@ -150,3 +150,4 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 - Source: https://github.com/phoenixframework/phoenix
 
 - deploy to update
+- 07/12/2022 - deploy
