@@ -151,3 +151,4 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 
 - deploy to update
 - 07/12/2022 - deploy
+- 03/01/2023 - deploy
